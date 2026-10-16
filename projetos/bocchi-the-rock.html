@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bocchi The Rock! · Estudo de caso · Gabriel Rizzo</title>
+    <meta
+      name="description"
+      content="Estudo de caso do fan site Bocchi The Rock!: redesign de UI/UX, design tokens em CSS e componentes acessíveis em JavaScript puro."
+    />
+    <meta name="theme-color" content="#4b0bf2" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content="Bocchi The Rock! · Estudo de caso de Gabriel Rizzo" />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/case-study.css" />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script src="../assets/js/main.js" defer></script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="../index.html">
+          <span class="brand__mark" aria-hidden="true">GR</span>
+          <span class="brand__name">Gabriel Rizzo</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <div class="site-nav" id="site-nav">
+          <nav aria-label="Seções">
+            <ul class="site-nav__links">
+              <li><a href="../index.html#projetos" aria-current="true">Projetos</a></li>
+              <li><a href="../index.html#sobre">Sobre</a></li>
+              <li><a href="../index.html#trajetoria">Trajetória</a></li>
+              <li><a href="../index.html#ferramentas">Ferramentas</a></li>
+            </ul>
+          </nav>
+          <div class="site-nav__contact">
+            <a href="https://www.linkedin.com/in/gabriel-rizzo-352052266/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/gabrielrizzoo" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="button button--primary button--small" href="mailto:gabriel.drizzo@gmail.com">E-mail</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="conteudo" class="case case--bocchi">
+      <section class="case-hero" aria-labelledby="case-title">
+        <div class="case-hero__inner">
+          <p class="breadcrumb"><a href="../index.html#projetos"><span class="arrow arrow--left" aria-hidden="true">←</span> Estudos de caso</a></p>
+          <p class="eyebrow case-hero__eyebrow">Estudo de caso 03 · Fan site</p>
+          <h1 class="case-hero__title" id="case-title">Bocchi The Rock!</h1>
+          <p class="case-hero__lead">
+            Um site de fã interativo, refeito do zero em 2026: identidade inspirada em flyers de casa de show e
+            componentes acessíveis em JavaScript puro.
+          </p>
+          <div class="case-hero__actions">
+            <a class="button button--primary" href="https://projetositebocchi.vercel.app" target="_blank" rel="noopener noreferrer">Testar o site <span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="button button--ghost" href="https://github.com/gabrielrizzoo/ProjetoSiteBocchi" target="_blank" rel="noopener noreferrer">Código no GitHub <span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+          <dl class="case-facts">
+            <div><dt>Meu papel</dt><dd>Redesign de UI/UX e desenvolvimento front-end</dd></div>
+            <div><dt>Equipe</dt><dd>Individual na versão de 2026</dd></div>
+            <div><dt>Período</dt><dd>2023 (curso) · 2026 (refatoração)</dd></div>
+            <div><dt>Status</dt><dd>No ar, na Vercel</dd></div>
+            <div><dt>Stack</dt><dd>HTML, CSS e JavaScript puro</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <div class="case-cover">
+        <figure class="browser">
+          <div class="browser__bar"><span class="browser__url">projetositebocchi.vercel.app</span></div>
+          <img
+            src="../assets/images/projects/bocchi/home-desktop.jpg"
+            alt="Página inicial: título BOCCHI THE ROCK! em branco e amarelo, botões Assistir ao trailer e Conhecer a banda e uma colagem de fotos impressas do anime."
+            width="1280"
+            height="1000"
+          />
+        </figure>
+      </div>
+
+      <div class="case-body">
+        <div class="case-body__inner">
+          <nav class="case-toc" aria-labelledby="toc-title">
+            <p class="case-toc__title" id="toc-title">Neste estudo</p>
+            <ol>
+              <li><a href="#contexto"><span>01</span> Contexto e objetivo</a></li>
+              <li><a href="#partida"><span>02</span> Ponto de partida</a></li>
+              <li><a href="#papel"><span>03</span> Meu papel</a></li>
+              <li><a href="#design"><span>04</span> Identidade e tokens</a></li>
+              <li><a href="#experiencia"><span>05</span> Experiência</a></li>
+              <li><a href="#tecnico"><span>06</span> Decisões técnicas</a></li>
+              <li><a href="#evolucao"><span>07</span> Evolução</a></li>
+              <li><a href="#prototipos"><span>08</span> Protótipos</a></li>
+              <li><a href="#estado"><span>09</span> Estado atual</a></li>
+            </ol>
+          </nav>
+
+          <div class="case-content">
+            <section class="case-section" id="contexto" aria-labelledby="contexto-title">
+              <div class="case-section__head"><span class="case-section__num">01</span><h2 id="contexto-title">Contexto e objetivo</h2></div>
+              <div class="prose">
+                <p>
+                  O site nasceu em 2023 como exercício de um curso de front-end, com o professor Paulo Borges. Em 2026
+                  refiz o projeto por completo (design, arquitetura e interatividade) para praticar desenvolvimento web
+                  moderno sem frameworks: nenhuma dependência além de HTML, CSS e JavaScript.
+                </p>
+                <p>É um projeto de fã, sem fins lucrativos.</p>
+              </div>
+            </section>
+
+            <section class="case-section" id="partida" aria-labelledby="partida-title">
+              <div class="case-section__head"><span class="case-section__num">02</span><h2 id="partida-title">Ponto de partida</h2></div>
+              <div class="prose">
+                <p>
+                  A primeira versão no repositório era uma página com logo, imagem e texto, mais páginas de contato,
+                  fotos e comentários. O objetivo da refatoração foi dar ao site uma identidade própria, mais
+                  interação e uma base acessível e organizada.
+                </p>
+              </div>
+            </section>
+
+            <section class="case-section" id="papel" aria-labelledby="papel-title">
+              <div class="case-section__head"><span class="case-section__num">03</span><h2 id="papel-title">Meu papel</h2></div>
+              <div class="prose">
+                <p>
+                  A versão de 2026 é individual: o redesign da interface, a organização do CSS em um design system e
+                  os componentes interativos.
+                </p>
+              </div>
+            </section>
+
+            <section class="case-section" id="design" aria-labelledby="design-title">
+              <div class="case-section__head"><span class="case-section__num">04</span><h2 id="design-title">Identidade e tokens</h2></div>
+              <div class="prose">
+                <p>
+                  A estética parte de <strong>flyers de casa de show</strong>: paleta tirada das quatro integrantes da
+                  banda, cores chapadas, layout assimétrico e detalhes em japonês. O tema claro usa um fundo cor de
+                  papel. Tudo isso vive em variáveis CSS no <code>global.css</code>.
+                </p>
+              </div>
+              <div class="swatches case-block">
+                <div class="swatch" style="--swatch: #ff6fa8"><div class="swatch__color"></div><div class="swatch__info"><p class="swatch__name">--kb-pink</p><p class="swatch__value">#ff6fa8</p><p class="swatch__use">Hitori · destaque principal</p></div></div>
+                <div class="swatch" style="--swatch: #6b9bff"><div class="swatch__color"></div><div class="swatch__info"><p class="swatch__name">--kb-blue</p><p class="swatch__value">#6b9bff</p><p class="swatch__use">Ryo</p></div></div>
+                <div class="swatch" style="--swatch: #ffd23f"><div class="swatch__color"></div><div class="swatch__info"><p class="swatch__name">--kb-yellow</p><p class="swatch__value">#ffd23f</p><p class="swatch__use">Nijika · título do hero</p></div></div>
+                <div class="swatch" style="--swatch: #ff6257"><div class="swatch__color"></div><div class="swatch__info"><p class="swatch__name">--kb-red</p><p class="swatch__value">#ff6257</p><p class="swatch__use">Kita</p></div></div>
+                <div class="swatch" style="--swatch: #ffb400"><div class="swatch__color"></div><div class="swatch__info"><p class="swatch__name">--kessoku</p><p class="swatch__value">#ffb400</p><p class="swatch__use">Amarelo da banda</p></div></div>
+                <div class="swatch" style="--swatch: #0d0c10"><div class="swatch__color"></div><div class="swatch__info"><p class="swatch__name">--bg</p><p class="swatch__value">#0d0c10</p><p class="swatch__use">Fundo do tema escuro</p></div></div>
+              </div>
+              <div class="type-specimens case-block">
+                <div class="type-specimen"><p class="type-specimen__name">Archivo</p><p class="type-specimen__use">Títulos condensados e texto, com eixo de largura</p></div>
+                <div class="type-specimen"><p class="type-specimen__name">IBM Plex Mono</p><p class="type-specimen__use">Rótulos, metadados e contadores</p></div>
+                <div class="type-specimen"><p class="type-specimen__name">Yusei Magic</p><p class="type-specimen__use">Nomes e etiquetas em japonês</p></div>
+              </div>
+            </section>
+
+            <section class="case-section" id="experiencia" aria-labelledby="experiencia-title">
+              <div class="case-section__head"><span class="case-section__num">05</span><h2 id="experiencia-title">Experiência</h2></div>
+              <div class="decisions">
+                <div class="decision"><h3>Hero editorial</h3><p>Título em tipografia condensada e uma colagem de fotos impressas com fita adesiva, legenda escrita à mão e adesivos em japonês.</p></div>
+                <div class="decision"><h3>Cards de personagens</h3><p>Cada integrante com cor própria e nome em japonês na vertical. A bio aparece no hover e no foco, e fica sempre visível em telas de toque; no celular, vira um carrossel com scroll-snap.</p></div>
+                <div class="decision"><h3>Simulador de ingressos</h3><p>Datas geradas a partir do dia atual, resumo da sessão em tempo real e confirmação sem recarregar a página.</p></div>
+                <div class="decision"><h3>Galeria acessível</h3><p>Lightbox com foco preso no modal, navegação por teclado, swipe no celular e contador.</p></div>
+                <div class="decision"><h3>Mural de comentários</h3><p>Sistema no navegador com proteção contra XSS, avaliação por estrelas, avatares coloridos e horários relativos.</p></div>
+                <div class="decision"><h3>Mini player</h3><p>Toca as músicas da Kessoku Band pela API do YouTube, com controles sempre visíveis, e continua a música ao trocar de página.</p></div>
+                <div class="decision"><h3>Tema claro e escuro</h3><p>Aplicado antes da primeira pintura, sem "flash", e com a preferência salva.</p></div>
+                <div class="decision"><h3>Contato</h3><p>Perguntas frequentes em acordeão e formulário com validação inline e contador de caracteres.</p></div>
+              </div>
+            </section>
+
+            <section class="case-section" id="tecnico" aria-labelledby="tecnico-title">
+              <div class="case-section__head"><span class="case-section__num">06</span><h2 id="tecnico-title">Decisões técnicas</h2></div>
+              <table class="tech-table">
+                <caption>Tecnologias e por que foram usadas</caption>
+                <thead><tr><th scope="col">Tecnologia</th><th scope="col">Uso no projeto</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">HTML</th><td>Estrutura semântica, com ARIA nos componentes interativos.</td></tr>
+                  <tr><th scope="row">CSS</th><td>Flexbox, Grid, custom properties, <code>clamp()</code> e animações; um <code>global.css</code> como design system e um arquivo por página.</td></tr>
+                  <tr><th scope="row">JavaScript puro</th><td>Manipulação do DOM, IntersectionObserver, lightbox e sanitização contra XSS, sem framework nem jQuery.</td></tr>
+                  <tr><th scope="row">YouTube IFrame API</th><td>Mini player com os vídeos oficiais.</td></tr>
+                  <tr><th scope="row">Service worker</th><td>Cache offline e manifesto de PWA.</td></tr>
+                  <tr><th scope="row">Google Fonts e Material Symbols</th><td>Tipografia e iconografia.</td></tr>
+                </tbody>
+              </table>
+              <div class="prose case-block">
+                <ul>
+                  <li><strong>Acessibilidade:</strong> navegação por teclado, <code>focus-visible</code>, ARIA nos componentes e respeito a <code>prefers-reduced-motion</code>.</li>
+                  <li><strong>Responsividade:</strong> menu lateral no celular, layouts que se reorganizam em colunas e nenhum overflow horizontal.</li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="case-section" id="evolucao" aria-labelledby="evolucao-title">
+              <div class="case-section__head"><span class="case-section__num">07</span><h2 id="evolucao-title">Evolução</h2></div>
+              <div class="prose">
+                <p>O histórico do repositório registra o caminho de uma versão para outra. Três momentos, capturados a partir dos próprios commits:</p>
+              </div>
+              <div class="evolution case-block" style="--steps: 3">
+                <figure class="evolution__step">
+                  <div class="browser">
+                    <div class="browser__bar"><span class="browser__url">Alpha</span></div>
+                    <img src="../assets/images/projects/bocchi/versao-alpha.jpg" alt="Versão Alpha: logo amarelo à esquerda, imagem da banda à direita e texto da sinopse abaixo, com menu simples." width="1440" height="900" loading="lazy" decoding="async" />
+                  </div>
+                  <figcaption>
+                    <p class="evolution__date">Mar. 2026</p>
+                    <p class="evolution__label">Alpha</p>
+                    <p class="evolution__note">Primeiro commit: logo, imagem e texto.</p>
+                  </figcaption>
+                </figure>
+                <figure class="evolution__step">
+                  <div class="browser">
+                    <div class="browser__bar"><span class="browser__url">Beta 3.1</span></div>
+                    <img src="../assets/images/projects/bocchi/versao-beta-3-1.jpg" alt="Versão Beta 3.1: hero com logo ao fundo, chips de informação, botão rosa de trailer e mini player no canto." width="1440" height="900" loading="lazy" decoding="async" />
+                  </div>
+                  <figcaption>
+                    <p class="evolution__date">Abr. 2026</p>
+                    <p class="evolution__label">Beta 3.1</p>
+                    <p class="evolution__note">Novas páginas, chips de informação e mini player.</p>
+                  </figcaption>
+                </figure>
+                <figure class="evolution__step">
+                  <div class="browser">
+                    <div class="browser__bar"><span class="browser__url">V1.0</span></div>
+                    <img src="../assets/images/projects/bocchi/home-desktop.jpg" alt="Versão 1.0: hero editorial com colagem de fotos impressas, título em branco e amarelo e dados do anime." width="1280" height="1000" loading="lazy" decoding="async" />
+                  </div>
+                  <figcaption>
+                    <p class="evolution__date">Out. 2026</p>
+                    <p class="evolution__label">V1.0</p>
+                    <p class="evolution__note">Depois do commit "Redesign completo da interface (UI/UX)".</p>
+                  </figcaption>
+                </figure>
+              </div>
+            </section>
+
+            <section class="case-section" id="prototipos" aria-labelledby="prototipos-title">
+              <div class="case-section__head"><span class="case-section__num">08</span><h2 id="prototipos-title">Protótipos</h2></div>
+              <!-- FIGMA: quando o arquivo estiver pronto, troque o bloco abaixo pelo link ou por imagens exportadas. -->
+              <div class="frame pending">
+                <span class="frame__label" aria-hidden="true">Figma · em preparação</span>
+                <p class="pending__title">Protótipo em organização</p>
+                <p>Os arquivos do Figma deste projeto estão sendo organizados. Quando publicados, aparecem aqui ao lado das telas implementadas.</p>
+              </div>
+            </section>
+
+            <section class="case-section" id="estado" aria-labelledby="estado-title">
+              <div class="case-section__head"><span class="case-section__num">09</span><h2 id="estado-title">Estado atual</h2></div>
+              <div class="prose">
+                <p>
+                  <strong>No ar</strong> em projetositebocchi.vercel.app, com as páginas Home, Os filmes, Fotos,
+                  Comentários e Contato, além de uma página 404.
+                </p>
+                <p>
+                  Todas as imagens e marcas de Bocchi The Rock! pertencem aos detentores de direitos (Aniplex,
+                  CloverWorks e Aki Hamaji).
+                </p>
+              </div>
+              <div class="case-links">
+                <a class="button button--primary" href="https://projetositebocchi.vercel.app" target="_blank" rel="noopener noreferrer">Testar o site <span class="arrow" aria-hidden="true">↗</span></a>
+                <a class="button button--ghost" href="https://github.com/gabrielrizzoo/ProjetoSiteBocchi" target="_blank" rel="noopener noreferrer">Código no GitHub <span class="arrow" aria-hidden="true">↗</span></a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <section class="case-gallery on-ink" aria-labelledby="registros-title">
+        <div class="container">
+          <header class="case-gallery__header">
+            <div>
+              <p class="eyebrow">Registros</p>
+              <h2 class="section-title" id="registros-title">Telas</h2>
+            </div>
+            <p>Capturas do site publicado, feitas em outubro de 2026.</p>
+          </header>
+          <div class="gallery">
+            <figure class="gallery__item gallery__item--main">
+              <div class="browser">
+                <div class="browser__bar"><span class="browser__url">projetositebocchi.vercel.app</span></div>
+                <img src="../assets/images/projects/bocchi/home-desktop.jpg" alt="Página inicial no desktop com o hero editorial." width="1280" height="1000" loading="lazy" decoding="async" />
+              </div>
+              <figcaption>Home: hero editorial com colagem de fotos.</figcaption>
+            </figure>
+            <figure class="gallery__item gallery__item--phone">
+              <div class="phone"><img src="../assets/images/projects/bocchi/home-mobile.jpg" alt="Página inicial no celular." width="780" height="1688" loading="lazy" decoding="async" /></div>
+              <figcaption>Home no celular.</figcaption>
+            </figure>
+            <figure class="gallery__item">
+              <div class="browser">
+                <div class="browser__bar"><span class="browser__url">projetositebocchi.vercel.app/filme.html</span></div>
+                <img src="../assets/images/projects/bocchi/filme-desktop.jpg" alt="Página Os filmes, com título em branco e amarelo, botão Reservar ingresso, foto em moldura de polaroide e o mini player no canto." width="1440" height="900" loading="lazy" decoding="async" />
+              </div>
+              <figcaption>Os filmes: entrada do simulador de ingressos.</figcaption>
+            </figure>
+            <figure class="gallery__item">
+              <div class="browser">
+                <div class="browser__bar"><span class="browser__url">projetositebocchi.vercel.app/fotos.html</span></div>
+                <img src="../assets/images/projects/bocchi/fotos-desktop.jpg" alt="Página Fotos, a galeria do site." width="1440" height="900" loading="lazy" decoding="async" />
+              </div>
+              <figcaption>Fotos: galeria com lightbox.</figcaption>
+            </figure>
+            <figure class="gallery__item gallery__item--wide">
+              <div class="browser">
+                <div class="browser__bar"><span class="browser__url">projetositebocchi.vercel.app/comentarios.html</span></div>
+                <img src="../assets/images/projects/bocchi/comentarios-desktop.jpg" alt="Página Comentários, o mural de comentários dos fãs." width="1440" height="900" loading="lazy" decoding="async" />
+              </div>
+              <figcaption>Comentários: mural com avaliação por estrelas.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <nav class="case-next" aria-label="Próximo estudo de caso">
+        <a class="case-next__link" href="horror-game-lux.html">
+          <span class="eyebrow">Próximo estudo de caso · 04</span>
+          <span class="case-next__title outline">Horror Game Lux</span>
+          <span class="case-next__cta">Continuar <span class="arrow arrow--right" aria-hidden="true">→</span></span>
+        </a>
+      </nav>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p class="site-footer__brand">Gabriel Rizzo <span>— do traço ao código.</span></p>
+        <ul class="link-list site-footer__links">
+          <li><a href="mailto:gabriel.drizzo@gmail.com">E-mail</a></li>
+          <li><a href="https://www.linkedin.com/in/gabriel-rizzo-352052266/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com/gabrielrizzoo" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        </ul>
+        <p class="site-footer__meta">
+          <span>© <span data-year>2026</span> Gabriel Rizzo · Feito com HTML, CSS e JavaScript</span>
+          <a href="#conteudo">Voltar ao topo ↑</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

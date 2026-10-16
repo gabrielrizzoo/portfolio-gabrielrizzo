@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Incentivart · Estudo de caso · Gabriel Rizzo</title>
+    <meta
+      name="description"
+      content="Estudo de caso da Incentivart: site de uma consultoria para projetos culturais e audiovisuais, feito em dupla. Design das telas e parte do front-end."
+    />
+    <meta name="theme-color" content="#4b0bf2" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content="Incentivart · Estudo de caso de Gabriel Rizzo" />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/case-study.css" />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script src="../assets/js/main.js" defer></script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="../index.html">
+          <span class="brand__mark" aria-hidden="true">GR</span>
+          <span class="brand__name">Gabriel Rizzo</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <div class="site-nav" id="site-nav">
+          <nav aria-label="Seções">
+            <ul class="site-nav__links">
+              <li><a href="../index.html#projetos" aria-current="true">Projetos</a></li>
+              <li><a href="../index.html#sobre">Sobre</a></li>
+              <li><a href="../index.html#trajetoria">Trajetória</a></li>
+              <li><a href="../index.html#ferramentas">Ferramentas</a></li>
+            </ul>
+          </nav>
+          <div class="site-nav__contact">
+            <a href="https://www.linkedin.com/in/gabriel-rizzo-352052266/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/gabrielrizzoo" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="button button--primary button--small" href="mailto:gabriel.drizzo@gmail.com">E-mail</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="conteudo" class="case case--incentivart">
+      <section class="case-hero" aria-labelledby="case-title">
+        <div class="case-hero__inner">
+          <p class="breadcrumb"><a href="../index.html#projetos"><span class="arrow arrow--left" aria-hidden="true">←</span> Estudos de caso</a></p>
+          <p class="eyebrow case-hero__eyebrow">Estudo de caso 02 · Freelance</p>
+          <h1 class="case-hero__title" id="case-title">Incentivart</h1>
+          <p class="case-hero__lead">
+            O site de uma consultoria técnica para projetos culturais e audiovisuais, feito em dupla. Desenhei as telas
+            e desenvolvi parte do front-end.
+          </p>
+          <div class="case-hero__actions">
+            <a class="button button--primary" href="https://incentivart.com.br/" target="_blank" rel="noopener noreferrer">Visitar o site <span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+          <dl class="case-facts">
+            <div><dt>Meu papel</dt><dd>Design das telas e parte do front-end</dd></div>
+            <div><dt>Equipe</dt><dd>Dupla: meu parceiro fez o back-end e a maior parte do código</dd></div>
+            <div><dt>Período</dt><dd>Set. 2025 — atual</dd></div>
+            <div><dt>Status</dt><dd>Site no ar; blog em desenvolvimento</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <div class="case-cover">
+        <figure class="browser">
+          <div class="browser__bar"><span class="browser__url">incentivart.com.br</span></div>
+          <img
+            src="../assets/images/projects/incentivart/home-desktop.jpg"
+            alt="Página inicial da Incentivart: título Cuidamos da parte técnica e burocrática enquanto você cria, com os botões Nossos serviços e Entre em contato e um carrossel de fotos de eventos."
+            width="1440"
+            height="900"
+          />
+        </figure>
+      </div>
+
+      <div class="case-body">
+        <div class="case-body__inner">
+          <nav class="case-toc" aria-labelledby="toc-title">
+            <p class="case-toc__title" id="toc-title">Neste estudo</p>
+            <ol>
+              <li><a href="#contexto"><span>01</span> Contexto</a></li>
+              <li><a href="#mensagem"><span>02</span> O que o site comunica</a></li>
+              <li><a href="#papel"><span>03</span> Divisão do trabalho</a></li>
+              <li><a href="#interface"><span>04</span> A interface publicada</a></li>
+              <li><a href="#processo"><span>05</span> Processo de design</a></li>
+              <li><a href="#estado"><span>06</span> Estado atual</a></li>
+            </ol>
+          </nav>
+
+          <div class="case-content">
+            <section class="case-section" id="contexto" aria-labelledby="contexto-title">
+              <div class="case-section__head"><span class="case-section__num">01</span><h2 id="contexto-title">Contexto</h2></div>
+              <div class="prose">
+                <p>
+                  A <strong>Incentivart</strong> é uma consultoria técnica para projetos culturais e audiovisuais. Ela
+                  ajuda produtoras e realizadores a estruturar projetos para leis de incentivo, editais, ANCINE e FSA, da
+                  concepção à prestação de contas.
+                </p>
+                <p>
+                  O site apresenta a empresa, explica os serviços e leva aos canais de contato. Trabalho nele como
+                  freelancer desde setembro de 2025.
+                </p>
+              </div>
+            </section>
+
+            <section class="case-section" id="mensagem" aria-labelledby="mensagem-title">
+              <div class="case-section__head"><span class="case-section__num">02</span><h2 id="mensagem-title">O que o site comunica</h2></div>
+              <!-- Complete com o briefing real: objetivos do cliente, público e restrições do projeto. -->
+              <div class="prose">
+                <p>
+                  O site fala de um serviço técnico e burocrático (leis de incentivo, compliance, prestação de contas)
+                  para um público criativo, como produtoras, produtores executivos e roteiristas. A frase de abertura
+                  resume essa ponte: <strong>"Cuidamos da parte técnica e burocrática enquanto você cria."</strong>
+                </p>
+              </div>
+            </section>
+
+            <section class="case-section" id="papel" aria-labelledby="papel-title">
+              <div class="case-section__head"><span class="case-section__num">03</span><h2 id="papel-title">Divisão do trabalho</h2></div>
+              <div class="prose"><p>O site foi feito em dupla. A divisão foi esta:</p></div>
+              <div class="split case-block">
+                <div class="split__col split__col--mine">
+                  <p class="split__who">Minha parte</p>
+                  <h3>Design e parte do front-end</h3>
+                  <ul>
+                    <li>Design das telas do site</li>
+                    <li>Desenvolvimento de parte do front-end</li>
+                  </ul>
+                </div>
+                <div class="split__col">
+                  <p class="split__who">Meu parceiro</p>
+                  <h3>Back-end e a maior parte do código</h3>
+                  <ul>
+                    <li>Back-end</li>
+                    <li>A maior parte do código do site</li>
+                  </ul>
+                </div>
+                <p class="split__shared">Em andamento: o blog do site, que já tem estrutura publicada (busca e filtros por tema), mas ainda não tem posts.</p>
+              </div>
+            </section>
+
+            <section class="case-section" id="interface" aria-labelledby="interface-title">
+              <div class="case-section__head"><span class="case-section__num">04</span><h2 id="interface-title">A interface publicada</h2></div>
+              <div class="prose">
+                <p>As telas no ar seguem uma linguagem consistente entre as páginas:</p>
+                <ul>
+                  <li><strong>Tema escuro com laranja como cor de destaque</strong>, usado em ações, rótulos e palavras-chave dos títulos.</li>
+                  <li><strong>Rótulos em pílula</strong> que anunciam cada seção, como "Consultoria técnica", "Quem somos" e "Serviços".</li>
+                  <li><strong>Títulos grandes e diretos</strong>, com duas ações claras no topo: conhecer os serviços ou entrar em contato.</li>
+                  <li><strong>Contato sempre por perto</strong>: telefone, WhatsApp e e-mail aparecem nas páginas internas e no rodapé.</li>
+                  <li><strong>No celular</strong>, menu recolhido e botões em largura total.</li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="case-section" id="processo" aria-labelledby="processo-title">
+              <div class="case-section__head"><span class="case-section__num">05</span><h2 id="processo-title">Processo de design</h2></div>
+              <!-- PROCESSO: adicione referências, wireframes e telas do Figma (com autorização da Incentivart)
+                   e explique as principais decisões de design que você tomou. -->
+              <div class="frame pending">
+                <span class="frame__label" aria-hidden="true">Figma · em preparação</span>
+                <p class="pending__title">Do desenho às telas no ar</p>
+                <p>As telas no Figma e as decisões por trás delas entram aqui quando o material estiver organizado, ao lado das páginas publicadas.</p>
+              </div>
+            </section>
+
+            <section class="case-section" id="estado" aria-labelledby="estado-title">
+              <div class="case-section__head"><span class="case-section__num">06</span><h2 id="estado-title">Estado atual</h2></div>
+              <div class="prose">
+                <p>
+                  <strong>No ar</strong> em incentivart.com.br, com as páginas Home, Sobre nós, Serviços, Blog e Contato.
+                  O blog tem a estrutura publicada e ainda não tem posts.
+                </p>
+              </div>
+              <!-- Se o código puder ser mostrado, adicione aqui o link do repositório. -->
+              <div class="case-links">
+                <a class="button button--primary" href="https://incentivart.com.br/" target="_blank" rel="noopener noreferrer">Visitar o site <span class="arrow" aria-hidden="true">↗</span></a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <section class="case-gallery on-ink" aria-labelledby="registros-title">
+        <div class="container">
+          <header class="case-gallery__header">
+            <div>
+              <p class="eyebrow">Registros</p>
+              <h2 class="section-title" id="registros-title">Telas</h2>
+            </div>
+            <p>Capturas do site publicado, feitas em outubro de 2026.</p>
+          </header>
+          <div class="gallery">
+            <figure class="gallery__item gallery__item--main">
+              <div class="browser">
+                <div class="browser__bar"><span class="browser__url">incentivart.com.br</span></div>
+                <img src="../assets/images/projects/incentivart/home-desktop.jpg" alt="Página inicial no desktop, com título, texto de apresentação, dois botões e carrossel de fotos." width="1440" height="900" loading="lazy" decoding="async" />
+              </div>
+              <figcaption>Home no desktop.</figcaption>
+            </figure>
+            <figure class="gallery__item gallery__item--phone">
+              <div class="phone"><img src="../assets/images/projects/incentivart/home-mobile.jpg" alt="Página inicial no celular, com menu recolhido, título e botões em largura total." width="780" height="1688" loading="lazy" decoding="async" /></div>
+              <figcaption>Home no celular.</figcaption>
+            </figure>
+            <figure class="gallery__item">
+              <div class="browser">
+                <div class="browser__bar"><span class="browser__url">incentivart.com.br/sobre.html</span></div>
+                <img src="../assets/images/projects/incentivart/sobre-desktop.jpg" alt="Página Sobre nós, com o título A base do seu sucesso é construída na preparação e os contatos logo abaixo." width="1440" height="900" loading="lazy" decoding="async" />
+              </div>
+              <figcaption>Sobre nós.</figcaption>
+            </figure>
+            <figure class="gallery__item">
+              <div class="browser">
+                <div class="browser__bar"><span class="browser__url">incentivart.com.br/servicos.html</span></div>
+                <img src="../assets/images/projects/incentivart/servicos-desktop.jpg" alt="Página Serviços, com o título Consultoria técnica para projetos culturais e audiovisuais e painéis de escopo, especialidades e contato direto." width="1440" height="900" loading="lazy" decoding="async" />
+              </div>
+              <figcaption>Serviços: escopo, especialidades e contato direto.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <nav class="case-next" aria-label="Próximo estudo de caso">
+        <a class="case-next__link" href="bocchi-the-rock.html">
+          <span class="eyebrow">Próximo estudo de caso · 03</span>
+          <span class="case-next__title outline">Bocchi The Rock!</span>
+          <span class="case-next__cta">Continuar <span class="arrow arrow--right" aria-hidden="true">→</span></span>
+        </a>
+      </nav>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p class="site-footer__brand">Gabriel Rizzo <span>— do traço ao código.</span></p>
+        <ul class="link-list site-footer__links">
+          <li><a href="mailto:gabriel.drizzo@gmail.com">E-mail</a></li>
+          <li><a href="https://www.linkedin.com/in/gabriel-rizzo-352052266/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com/gabrielrizzoo" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        </ul>
+        <p class="site-footer__meta">
+          <span>© <span data-year>2026</span> Gabriel Rizzo · Feito com HTML, CSS e JavaScript</span>
+          <a href="#conteudo">Voltar ao topo ↑</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

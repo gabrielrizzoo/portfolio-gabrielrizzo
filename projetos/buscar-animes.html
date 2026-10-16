@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Buscar Animes · Estudo de caso · Gabriel Rizzo</title>
+    <meta
+      name="description"
+      content="Estudo de caso do Buscar Animes: busca, listas de sugestões e sorteio com a API do AniList, em React, TypeScript e Tailwind CSS."
+    />
+    <meta name="theme-color" content="#4b0bf2" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content="Buscar Animes · Estudo de caso de Gabriel Rizzo" />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/case-study.css" />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script src="../assets/js/main.js" defer></script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="../index.html">
+          <span class="brand__mark" aria-hidden="true">GR</span>
+          <span class="brand__name">Gabriel Rizzo</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <div class="site-nav" id="site-nav">
+          <nav aria-label="Seções">
+            <ul class="site-nav__links">
+              <li><a href="../index.html#projetos" aria-current="true">Projetos</a></li>
+              <li><a href="../index.html#sobre">Sobre</a></li>
+              <li><a href="../index.html#trajetoria">Trajetória</a></li>
+              <li><a href="../index.html#ferramentas">Ferramentas</a></li>
+            </ul>
+          </nav>
+          <div class="site-nav__contact">
+            <a href="https://www.linkedin.com/in/gabriel-rizzo-352052266/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/gabrielrizzoo" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="button button--primary button--small" href="mailto:gabriel.drizzo@gmail.com">E-mail</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="conteudo" class="case case--buscar-animes">
+      <section class="case-hero" aria-labelledby="case-title">
+        <div class="case-hero__inner">
+          <p class="breadcrumb"><a href="../index.html#projetos"><span class="arrow arrow--left" aria-hidden="true">←</span> Estudos de caso</a></p>
+          <p class="eyebrow case-hero__eyebrow">Estudo de caso 01 · Projeto pessoal</p>
+          <h1 class="case-hero__title" id="case-title">Buscar <span>Animes</span></h1>
+          <p class="case-hero__lead">
+            Uma aplicação para encontrar o próximo anime: busca por nome, listas de sugestões e um sorteio para quando
+            não se sabe o que assistir.
+          </p>
+          <div class="case-hero__actions">
+            <a class="button button--primary" href="https://buscar-animes.vercel.app" target="_blank" rel="noopener noreferrer">Testar a aplicação <span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="button button--ghost" href="https://github.com/gabrielrizzoo/Buscar-Animes" target="_blank" rel="noopener noreferrer">Código no GitHub <span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+          <dl class="case-facts">
+            <div><dt>Meu papel</dt><dd>Design de interface e desenvolvimento</dd></div>
+            <div><dt>Equipe</dt><dd>Projeto individual, com apoio de IA</dd></div>
+            <div><dt>Período</dt><dd>2024 — 2026</dd></div>
+            <div><dt>Status</dt><dd>No ar, na Vercel</dd></div>
+            <div><dt>Stack</dt><dd>React 19, TypeScript, Vite 8, Tailwind CSS 4</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <div class="case-cover">
+        <figure class="browser">
+          <div class="browser__bar"><span class="browser__url">buscar-animes.vercel.app</span></div>
+          <img
+            src="../assets/images/projects/buscar-animes/inicio-desktop.jpg"
+            alt="Tela inicial no desktop: título Encontre seu próximo anime, campo de busca, botão Sortear um anime e a lista Em alta da seção Descubra."
+            width="1280"
+            height="1000"
+          />
+        </figure>
+      </div>
+
+      <div class="case-body">
+        <div class="case-body__inner">
+          <nav class="case-toc" aria-labelledby="toc-title">
+            <p class="case-toc__title" id="toc-title">Neste estudo</p>
+            <ol>
+              <li><a href="#contexto"><span>01</span> Contexto e objetivo</a></li>
+              <li><a href="#problema"><span>02</span> O problema</a></li>
+              <li><a href="#papel"><span>03</span> Meu papel</a></li>
+              <li><a href="#design"><span>04</span> Design e experiência</a></li>
+              <li><a href="#tecnico"><span>05</span> Decisões técnicas</a></li>
+              <li><a href="#evolucao"><span>06</span> Evolução</a></li>
+              <li><a href="#prototipos"><span>07</span> Protótipos</a></li>
+              <li><a href="#estado"><span>08</span> Estado atual</a></li>
+            </ol>
+          </nav>
+
+          <div class="case-content">
+            <section class="case-section" id="contexto" aria-labelledby="contexto-title">
+              <div class="case-section__head"><span class="case-section__num">01</span><h2 id="contexto-title">Contexto e objetivo</h2></div>
+              <div class="prose">
+                <p>
+                  O projeto nasceu em 2024 na <strong>Imersão Dev Front-End com Google Gemini, da Alura</strong>, como um
+                  exercício de lógica e manipulação do DOM: a busca acontecia em uma lista fixa de três animes.
+                </p>
+                <p>
+                  Em 2026 retomei o projeto com outro objetivo: transformá-lo em uma aplicação de verdade, com dados de
+                  uma API pública, interface responsiva e acessível, código tipado e testes automatizados.
+                </p>
+              </div>
+            </section>
+
+            <section class="case-section" id="problema" aria-labelledby="problema-title">
+              <div class="case-section__head"><span class="case-section__num">02</span><h2 id="problema-title">O problema</h2></div>
+              <div class="prose">
+                <p>
+                  Uma busca por nome só ajuda quem já sabe o que procura. Para quem quer começar algo novo, a aplicação
+                  oferece três caminhos:
+                </p>
+                <ul>
+                  <li><strong>Buscar</strong> pelo nome, com o termo guardado na URL para compartilhar a busca.</li>
+                  <li><strong>Explorar</strong> listas prontas: em alta, da temporada atual e mais bem avaliados.</li>
+                  <li><strong>Sortear</strong> um anime entre os mais populares com nota acima de 7.</li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="case-section" id="papel" aria-labelledby="papel-title">
+              <div class="case-section__head"><span class="case-section__num">03</span><h2 id="papel-title">Meu papel</h2></div>
+              <div class="prose">
+                <p>
+                  Projeto individual: interface, código, testes e publicação. Usei ferramentas de IA como apoio em
+                  etapas como a auditoria, a migração para React e o redesign (os pull requests estão no repositório),
+                  com revisão minha antes de integrar as mudanças.
+                </p>
+              </div>
+            </section>
+
+            <section class="case-section" id="design" aria-labelledby="design-title">
+              <div class="case-section__head"><span class="case-section__num">04</span><h2 id="design-title">Design e experiência</h2></div>
+              <div class="decisions">
+                <div class="decision">
+                  <h3>Cor que vem das capas</h3>
+                  <p>Tema escuro neutro, com o âmbar reservado para ações e destaques. A sombra de cada card usa a cor predominante da capa do anime.</p>
+                </div>
+                <div class="decision">
+                  <h3>Todos os estados desenhados</h3>
+                  <p>Skeleton no carregamento, termo vazio, nenhum resultado e erros específicos: tempo esgotado, limite de requisições (com o tempo de espera), instabilidade e falha de conexão.</p>
+                </div>
+                <div class="decision">
+                  <h3>Temporada em linguagem local</h3>
+                  <p>A lista aparece como "temporada de outubro de 2026", porque outono e primavera se invertem no Brasil.</p>
+                </div>
+                <div class="decision">
+                  <h3>Um link por card</h3>
+                  <p>O card inteiro é clicável, mas leitores de tela ouvem um único link por anime, com nome descritivo.</p>
+                </div>
+                <div class="decision">
+                  <h3>Acessível por padrão</h3>
+                  <p>Landmarks, regiões de status, foco levado ao anime sorteado, navegação completa pelo teclado e respeito ao movimento reduzido.</p>
+                </div>
+                <div class="decision">
+                  <h3>De 320 px a telas largas</h3>
+                  <p>Lista compacta com capa à esquerda no celular e grade de três a quatro colunas de pôsteres nas telas maiores.</p>
+                </div>
+              </div>
+
+              <div class="case-block">
+                <h3>Tokens de tema</h3>
+                <div class="prose"><p>As cores e as fontes ficam centralizadas como tokens do Tailwind (<code>@theme</code>), em um único arquivo.</p></div>
+                <div class="swatches case-block">
+                  <div class="swatch" style="--swatch: #07090e"><div class="swatch__color"></div><div class="swatch__info"><p class="swatch__name">canvas</p><p class="swatch__value">#07090e</p><p class="swatch__use">Fundo</p></div></div>
+                  <div class="swatch" style="--swatch: #0e1118"><div class="swatch__color"></div><div class="swatch__info"><p class="swatch__name">surface</p><p class="swatch__value">#0e1118</p><p class="swatch__use">Superfícies</p></div></div>
+                  <div class="swatch" style="--swatch: #f4f5f7"><div class="swatch__color"></div><div class="swatch__info"><p class="swatch__name">ink</p><p class="swatch__value">#f4f5f7</p><p class="swatch__use">Texto</p></div></div>
+                  <div class="swatch" style="--swatch: #9ba3b4"><div class="swatch__color"></div><div class="swatch__info"><p class="swatch__name">muted</p><p class="swatch__value">#9ba3b4</p><p class="swatch__use">Texto secundário</p></div></div>
+                  <div class="swatch" style="--swatch: #f59e0b"><div class="swatch__color"></div><div class="swatch__info"><p class="swatch__name">accent</p><p class="swatch__value">#f59e0b</p><p class="swatch__use">Ações e destaques</p></div></div>
+                  <div class="swatch" style="--swatch: #f97316"><div class="swatch__color"></div><div class="swatch__info"><p class="swatch__name">accent-strong</p><p class="swatch__value">#f97316</p><p class="swatch__use">Ênfase</p></div></div>
+                </div>
+                <div class="type-specimens case-block">
+                  <div class="type-specimen"><p class="type-specimen__name">Sora</p><p class="type-specimen__use">Títulos</p></div>
+                  <div class="type-specimen"><p class="type-specimen__name">Inter</p><p class="type-specimen__use">Texto da interface</p></div>
+                  <div class="type-specimen"><p class="type-specimen__name">Ícones em SVG</p><p class="type-specimen__use">Desenhados no próprio projeto, sem biblioteca</p></div>
+                </div>
+              </div>
+            </section>
+
+            <section class="case-section" id="tecnico" aria-labelledby="tecnico-title">
+              <div class="case-section__head"><span class="case-section__num">05</span><h2 id="tecnico-title">Decisões técnicas</h2></div>
+              <table class="tech-table">
+                <caption>Tecnologias e por que foram usadas</caption>
+                <thead><tr><th scope="col">Tecnologia</th><th scope="col">Uso no projeto</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">React 19</th><td>Interface declarativa em componentes.</td></tr>
+                  <tr><th scope="row">TypeScript</th><td>Tipagem da resposta da API, que tem vários campos que podem ser nulos.</td></tr>
+                  <tr><th scope="row">Vite 8</th><td>Servidor de desenvolvimento e build de produção.</td></tr>
+                  <tr><th scope="row">Tailwind CSS 4</th><td>Estilos utilitários e tokens de tema.</td></tr>
+                  <tr><th scope="row">Vitest + Testing Library</th><td>Testes de unidade, de hook e de componentes, com a API simulada (sem depender da internet).</td></tr>
+                  <tr><th scope="row">GitHub Actions</th><td>Lint, formatação, testes e build a cada push e pull request.</td></tr>
+                  <tr><th scope="row">Vercel</th><td>Hospedagem.</td></tr>
+                </tbody>
+              </table>
+              <div class="prose case-block">
+                <ul>
+                  <li><strong>Sem bibliotecas de roteamento, estado global ou GraphQL.</strong> É uma tela com poucas consultas fixas, então <code>useReducer</code> e <code>fetch</code> resolvem.</li>
+                  <li><strong>Um hook para todas as listas.</strong> Busca e sugestões usam o mesmo <code>useAnimeList</code>; cada lista guarda o próprio estado, e limpar a busca não refaz requisições.</li>
+                  <li><strong>A última requisição vence.</strong> Cada requisição tem um <code>AbortController</code>; respostas atrasadas são descartadas.</li>
+                  <li><strong>Sorteio com uma única requisição.</strong> Com um anime por página, sortear a página (de 1 a 1.000) é sortear o anime.</li>
+                  <li><strong>Dados validados na entrada.</strong> Só imagens <code>https</code>, cores no formato <code>#rrggbb</code> e links do MyAnimeList ou do AniList; a sinopse vira texto puro.</li>
+                  <li><strong>Timeout próprio de 10 s</strong>, combinado com o cancelamento sem depender de <code>AbortSignal.any</code>, que não existe no Safari anterior ao 17.4.</li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="case-section" id="evolucao" aria-labelledby="evolucao-title">
+              <div class="case-section__head"><span class="case-section__num">06</span><h2 id="evolucao-title">Evolução</h2></div>
+              <div class="evolution" style="--steps: 2">
+                <figure class="evolution__step">
+                  <div class="browser">
+                    <div class="browser__bar"><span class="browser__url">versão de 2024</span></div>
+                    <img src="../assets/images/projects/buscar-animes/versao-2024.jpg" alt="Primeira versão, de 2024: título Animes, campo de busca e botão Pesquisar em fundo cinza." width="1440" height="900" loading="lazy" decoding="async" />
+                  </div>
+                  <figcaption>
+                    <p class="evolution__date">Set. 2024</p>
+                    <p class="evolution__label">Exercício da imersão</p>
+                    <p class="evolution__note">Busca em uma lista fixa de três animes, em HTML, CSS e JavaScript.</p>
+                  </figcaption>
+                </figure>
+                <figure class="evolution__step">
+                  <div class="browser">
+                    <div class="browser__bar"><span class="browser__url">buscar-animes.vercel.app</span></div>
+                    <img src="../assets/images/projects/buscar-animes/inicio-desktop.jpg" alt="Versão atual, de outubro de 2026: tema escuro, busca, sorteio e lista Em alta." width="1280" height="1000" loading="lazy" decoding="async" />
+                  </div>
+                  <figcaption>
+                    <p class="evolution__date">Out. 2026</p>
+                    <p class="evolution__label">Versão atual</p>
+                    <p class="evolution__note">React, TypeScript e Tailwind, com dados do AniList, listas e sorteio.</p>
+                  </figcaption>
+                </figure>
+              </div>
+              <ol class="milestones">
+                <li><p class="milestones__date">2024</p><p>Imersão da Alura: busca em uma lista fixa de três animes, guardada em <code>dados.js</code>.</p></li>
+                <li><p class="milestones__date">2026</p><p>Dados da API Jikan (MyAnimeList) e visual escuro com efeito de vidro, ainda em JavaScript puro. Essa versão está na tag <code>v1-vanilla</code>.</p></li>
+                <li><p class="milestones__date">Out. 2026</p><p>Auditoria corrigiu injeção de HTML, falta de timeout, buscas concorrentes e o resumo da sinopse. A interface foi migrada para React, TypeScript e Tailwind CSS.</p></li>
+                <li><p class="milestones__date">Out. 2026</p><p>A API pública da Jikan foi descontinuada: a busca passou para a API GraphQL do AniList, junto com um redesign completo.</p></li>
+                <li><p class="milestones__date">Out. 2026</p><p>Listas de sugestões, sorteio e um visual mais limpo, com as cores vindas das capas.</p></li>
+              </ol>
+            </section>
+
+            <section class="case-section" id="prototipos" aria-labelledby="prototipos-title">
+              <div class="case-section__head"><span class="case-section__num">07</span><h2 id="prototipos-title">Protótipos</h2></div>
+              <!-- FIGMA: quando o arquivo estiver pronto, troque o bloco abaixo por um link
+                   (ou imagens exportadas do Figma lado a lado com as telas implementadas). -->
+              <div class="frame pending">
+                <span class="frame__label" aria-hidden="true">Figma · em preparação</span>
+                <p class="pending__title">Protótipo em organização</p>
+                <p>Os arquivos do Figma deste projeto estão sendo organizados. Quando publicados, aparecem aqui ao lado das telas implementadas, para comparar o desenho com o resultado.</p>
+              </div>
+            </section>
+
+            <section class="case-section" id="estado" aria-labelledby="estado-title">
+              <div class="case-section__head"><span class="case-section__num">08</span><h2 id="estado-title">Estado atual</h2></div>
+              <div class="prose">
+                <p>
+                  <strong>No ar</strong> em buscar-animes.vercel.app, com integração contínua rodando lint, verificação de
+                  formatação, testes e build. Limitações conhecidas:
+                </p>
+                <ul>
+                  <li>O AniList está limitado a 30 requisições por minuto; ao estourar o limite, a aplicação avisa quanto tempo esperar.</li>
+                  <li>A API não informa um total confiável de resultados para buscas.</li>
+                  <li>Títulos em japonês romanizado e sinopses em inglês, sem tradução.</li>
+                  <li>O sorteio considera apenas os 1.000 animes mais populares com nota acima de 7.</li>
+                  <li>Ainda não há filtros por formato, gênero ou ordenação.</li>
+                </ul>
+                <p>Próximos passos possíveis: filtros e sorteio por gênero, uma página de detalhes do anime e a opção de títulos em inglês nos cards.</p>
+              </div>
+              <div class="case-links">
+                <a class="button button--primary" href="https://buscar-animes.vercel.app" target="_blank" rel="noopener noreferrer">Testar a aplicação <span class="arrow" aria-hidden="true">↗</span></a>
+                <a class="button button--ghost" href="https://github.com/gabrielrizzoo/Buscar-Animes" target="_blank" rel="noopener noreferrer">Código no GitHub <span class="arrow" aria-hidden="true">↗</span></a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <section class="case-gallery on-ink" aria-labelledby="registros-title">
+        <div class="container">
+          <header class="case-gallery__header">
+            <div>
+              <p class="eyebrow">Registros</p>
+              <h2 class="section-title" id="registros-title">Telas</h2>
+            </div>
+            <p>Capturas da versão atual, as mesmas publicadas no README do repositório.</p>
+          </header>
+          <div class="gallery">
+            <figure class="gallery__item gallery__item--wide">
+              <div class="browser">
+                <div class="browser__bar"><span class="browser__url">buscar-animes.vercel.app</span></div>
+                <img src="../assets/images/projects/buscar-animes/sorteio-desktop.jpg" alt="Destaque do anime sorteado, com capa, banner ao fundo, nota, gêneros, sinopse e os botões Ver no MyAnimeList e Sortear outro." width="1280" height="760" loading="lazy" decoding="async" />
+              </div>
+              <figcaption>Sorteio: destaque com capa, banner, nota, gêneros e sinopse.</figcaption>
+            </figure>
+            <figure class="gallery__item">
+              <div class="browser">
+                <div class="browser__bar"><span class="browser__url">buscar-animes.vercel.app/?q=frieren</span></div>
+                <img src="../assets/images/projects/buscar-animes/resultados-desktop.jpg" alt="Resultados da busca por Frieren no desktop, com o botão Limpar busca e a grade de cards." width="1280" height="1000" loading="lazy" decoding="async" />
+              </div>
+              <figcaption>Busca na URL: o link de uma busca pode ser compartilhado.</figcaption>
+            </figure>
+            <figure class="gallery__item gallery__item--phone">
+              <div class="phone"><img src="../assets/images/projects/buscar-animes/inicio-mobile.jpg" alt="Tela inicial no celular, com busca, botão de sorteio e abas de sugestões." width="780" height="1688" loading="lazy" decoding="async" /></div>
+              <figcaption>Início no celular.</figcaption>
+            </figure>
+            <figure class="gallery__item gallery__item--phone">
+              <div class="phone"><img src="../assets/images/projects/buscar-animes/resultados-mobile.jpg" alt="Resultados da busca no celular, em lista compacta com a capa à esquerda." width="780" height="1688" loading="lazy" decoding="async" /></div>
+              <figcaption>Resultados em lista compacta.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <nav class="case-next" aria-label="Próximo estudo de caso">
+        <a class="case-next__link" href="incentivart.html">
+          <span class="eyebrow">Próximo estudo de caso · 02</span>
+          <span class="case-next__title outline">Incentivart</span>
+          <span class="case-next__cta">Continuar <span class="arrow arrow--right" aria-hidden="true">→</span></span>
+        </a>
+      </nav>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p class="site-footer__brand">Gabriel Rizzo <span>— do traço ao código.</span></p>
+        <ul class="link-list site-footer__links">
+          <li><a href="mailto:gabriel.drizzo@gmail.com">E-mail</a></li>
+          <li><a href="https://www.linkedin.com/in/gabriel-rizzo-352052266/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com/gabrielrizzoo" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        </ul>
+        <p class="site-footer__meta">
+          <span>© <span data-year>2026</span> Gabriel Rizzo · Feito com HTML, CSS e JavaScript</span>
+          <a href="#conteudo">Voltar ao topo ↑</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
