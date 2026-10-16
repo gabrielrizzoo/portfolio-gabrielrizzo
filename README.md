@@ -15,7 +15,7 @@ Site estático em HTML, CSS e JavaScript, sem framework, sem build e sem depend�
 ## Estrutura
 
 ```text
-index.html                    # Home: hero com contatos → estudos de caso → sobre → trajetória → ferramentas → contato
+index.html                    # Home: hero com contatos → estudos de caso → sobre → trajetória → ferramentas → contato (com foto)
 projetos/
   buscar-animes.html          # Estudos de caso (um por projeto)
   incentivart.html
@@ -45,8 +45,8 @@ Depois acesse <http://localhost:5500>. O botão "Copiar" do e-mail usa a área d
 
 1. Copie um arquivo de `projetos/` e troque o conteúdo. A estrutura é sempre: hero (`case-hero` com `case-facts`), capa (`case-cover`), corpo com índice (`case-toc` + `case-section`), registros (`case-gallery`) e próximo estudo (`case-next`).
 2. Defina a cor do projeto em `assets/css/case-study.css` com uma classe `case--nome { --case-accent: … }`.
-3. Blocos disponíveis: `decisions` (cards de decisões), `tech-table`, `swatches` (tokens de cor), `type-specimens`, `evolution` + `milestones` (antes/depois), `split` (divisão do trabalho em equipe), `principles` e `pending` (material ainda não publicado).
-4. Adicione o card na home (`portfolio-project`). A grade defasada se repete a cada quatro cards.
+3. Blocos disponíveis: `decisions` (cards de decisões), `tech-table`, `swatches` (tokens de cor), `type-specimens`, `evolution` + `milestones` (antes/depois), `split` (divisão do trabalho em equipe), `principles`, `figma-embed` (arquivo do Figma incorporado, com link alternativo) e `pending` (material ainda não publicado).
+4. Adicione o card na home (`portfolio-project`). Miniatura e descrição ficam lado a lado e trocam de lado a cada card.
 
 ### Cabeçalho e rodapé
 
@@ -54,7 +54,11 @@ São repetidos em cada página (o site não tem build). Ao mudar um link de cont
 
 ### Materiais pendentes
 
-Os pontos a completar estão marcados com comentários HTML em maiúsculas (`FIGMA`, `FOTO`, `PAPEL`, `PROCESSO`, `REGISTROS`).
+Os pontos a completar estão marcados com comentários HTML em maiúsculas: `FIGMA` (Buscar Animes) e `REGISTROS` (Horror Game Lux).
+
+### Figma incorporado
+
+O `src` do iframe usa a URL de incorporação (`embed.figma.com/...&embed-host=share`), e a legenda mantém um link "Abrir no Figma" com o arquivo original. O arquivo precisa estar compartilhado como "qualquer pessoa com o link pode ver" para aparecer no site.
 
 ## Acessibilidade e desempenho
 
@@ -69,3 +73,4 @@ Os pontos a completar estão marcados com comentários HTML em maiúsculas (`FIG
 - **Bocchi The Rock!:** capturas da demonstração pública; `versao-alpha.jpg` e `versao-beta-3-1.jpg` vêm de commits antigos do repositório.
 - **Incentivart:** capturas do site público incentivart.com.br (outubro de 2026).
 - **Horror Game Lux:** sem imagens ainda (capa tipográfica).
+- **Foto (`assets/images/gabriel-rizzo.jpg`):** recorte de uma foto enviada pelo Gabriel, usada só na seção de contato, em cores naturais.

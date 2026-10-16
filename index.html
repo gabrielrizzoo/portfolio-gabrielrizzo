@@ -91,16 +91,16 @@
           </svg>
 
           <ul class="hero__roles" aria-label="Áreas de atuação">
-            <li><span>01</span> UI/UX Design</li>
-            <li><span>02</span> Front-End</li>
-            <li><span>03</span> Design Engineering</li>
+            <li>UI/UX Design</li>
+            <li>Front-End</li>
+            <li>Design Engineering</li>
           </ul>
 
           <div class="hero__aside">
             <p class="hero__text">
-              Sou estudante de Ciência da Computação na UVA e freelancer na <strong>Incentivart</strong>, onde
-              desenho as telas do site e desenvolvo parte do front-end, em dupla. Gosto de acompanhar uma
-              interface do primeiro rascunho até o navegador.
+              Estudo Ciência da Computação na UVA e gosto de trabalhar no ponto em que o design vira código:
+              desenhar a interface, entender o porquê de cada decisão e construir o resultado no navegador. Busco
+              oportunidades em UI/UX Design e Front-End, com o objetivo de atuar em Design Engineering.
             </p>
 
             <div class="contact-box">
@@ -121,13 +121,13 @@
       </section>
 
       <!-- ============================================================
-           01 · ESTUDOS DE CASO (a partir de portfolio-projects-section.html)
+           ESTUDOS DE CASO (a partir de portfolio-projects-section.html)
            Cada card leva à página do estudo de caso em projetos/.
            ============================================================ -->
       <section class="portfolio-work" id="projetos" aria-labelledby="portfolio-work-title">
         <header class="portfolio-work__header reveal">
           <div class="portfolio-work__heading">
-            <p class="eyebrow">01 — Trabalhos selecionados</p>
+            <p class="eyebrow">Trabalhos selecionados</p>
             <h2 class="section-title" id="portfolio-work-title">Estudos <br />de caso</h2>
           </div>
           <p class="portfolio-work__intro">
@@ -138,8 +138,9 @@
 
         <div class="portfolio-work__grid">
           <article class="portfolio-project reveal">
-            <p class="portfolio-project__sticker" aria-hidden="true">Em<br />destaque</p>
             <div class="portfolio-project__visual">
+              <p class="portfolio-project__sticker" aria-hidden="true">Em<br />destaque</p>
+              <div class="portfolio-project__media">
               <img
                 src="assets/images/projects/buscar-animes/inicio-desktop.jpg"
                 alt="Tela inicial do Buscar Animes: título, campo de busca, botão de sorteio e a lista Em alta."
@@ -149,6 +150,7 @@
                 decoding="async"
               />
               <span class="portfolio-project__open" aria-hidden="true">→</span>
+              </div>
             </div>
             <div class="portfolio-project__content">
               <p class="portfolio-project__meta"><span class="num">01</span><span class="rule"></span><span>Projeto pessoal · 2024—2026</span></p>
@@ -171,6 +173,7 @@
 
           <article class="portfolio-project reveal">
             <div class="portfolio-project__visual">
+              <div class="portfolio-project__media">
               <img
                 src="assets/images/projects/incentivart/home-desktop.jpg"
                 alt="Página inicial do site da Incentivart, com o título Cuidamos da parte técnica e burocrática enquanto você cria."
@@ -180,18 +183,19 @@
                 decoding="async"
               />
               <span class="portfolio-project__open" aria-hidden="true">→</span>
+              </div>
             </div>
             <div class="portfolio-project__content">
-              <p class="portfolio-project__meta"><span class="num">02</span><span class="rule"></span><span>Freelance · desde 2025</span></p>
+              <p class="portfolio-project__meta"><span class="num">02</span><span class="rule"></span><span>Freelance · 2025—2026</span></p>
               <h3 class="portfolio-project__title">
                 <a href="projetos/incentivart.html">Incentivart<span class="visually-hidden">: ler estudo de caso</span></a>
               </h3>
               <p class="portfolio-project__summary">
-                Site de uma consultoria para projetos culturais e audiovisuais. Desenhei as telas e desenvolvi parte
-                do front-end, em dupla.
+                Site de uma empresa que cuida da parte burocrática de projetos culturais e audiovisuais. Fiz o UI/UX e
+                parte do front-end, em dupla com Bruno Scalercio.
               </p>
               <ul class="portfolio-project__tags" aria-label="Áreas">
-                <li>Design de interface</li>
+                <li>UI/UX</li>
                 <li>Front-End</li>
                 <li>Em dupla</li>
               </ul>
@@ -201,6 +205,7 @@
 
           <article class="portfolio-project reveal">
             <div class="portfolio-project__visual">
+              <div class="portfolio-project__media">
               <img
                 src="assets/images/projects/bocchi/home-desktop.jpg"
                 alt="Página inicial do fan site Bocchi The Rock!, com título em branco e amarelo e colagem de fotos do anime."
@@ -210,6 +215,7 @@
                 decoding="async"
               />
               <span class="portfolio-project__open" aria-hidden="true">→</span>
+              </div>
             </div>
             <div class="portfolio-project__content">
               <p class="portfolio-project__meta"><span class="num">03</span><span class="rule"></span><span>Fan site · 2023 / 2026</span></p>
@@ -231,12 +237,14 @@
 
           <article class="portfolio-project reveal">
             <div class="portfolio-project__visual">
+              <div class="portfolio-project__media">
               <div class="cover cover--lux" role="img" aria-label="Capa tipográfica do Horror Game Lux">
                 <span class="cover__kicker">TCC · Unreal Engine</span>
                 <span class="cover__title outline">Lux</span>
                 <span class="cover__note">Luz · silêncio · antecipação</span>
               </div>
               <span class="portfolio-project__open" aria-hidden="true">→</span>
+              </div>
             </div>
             <div class="portfolio-project__content">
               <p class="portfolio-project__meta"><span class="num">04</span><span class="rule"></span><span>TCC em grupo · em desenvolvimento</span></p>
@@ -244,10 +252,11 @@
                 <a href="projetos/horror-game-lux.html">Horror Game Lux<span class="visually-hidden">: ler estudo de caso</span></a>
               </h3>
               <p class="portfolio-project__summary">
-                Jogo de terror em desenvolvimento na Unreal Engine. A proposta usa iluminação, silêncio e sons de
-                antecipação para criar tensão.
+                Meu TCC em grupo: um jogo de terror na Unreal Engine. Cuido da ambientação, da história, do game
+                design e de parte da jogabilidade.
               </p>
               <ul class="portfolio-project__tags" aria-label="Tecnologias">
+                <li>Game design</li>
                 <li>Unreal Engine</li>
                 <li>Em grupo</li>
               </ul>
@@ -289,35 +298,28 @@
       </section>
 
       <!-- ============================================================
-           02 · SOBRE + COMO TRABALHO
+           SOBRE + COMO TRABALHO
            ============================================================ -->
       <section class="about on-paper" id="sobre" aria-labelledby="sobre-title">
         <div class="container about__grid">
           <div class="about__head reveal">
-            <p class="eyebrow">02 — Sobre</p>
             <h2 class="section-title" id="sobre-title">Sobre <br />mim</h2>
-            <!-- FOTO: quando houver uma foto adequada (retrato, luz natural, fundo neutro, 1200 px ou mais),
-                 salve em assets/images/gabriel-rizzo.jpg e descomente. O CSS aplica o tratamento violeta.
-            <figure class="about__photo">
-              <img src="assets/images/gabriel-rizzo.jpg" alt="Retrato de Gabriel Rizzo" width="800" height="1000" loading="lazy" />
-            </figure>
-            -->
           </div>
 
           <div class="about__body reveal">
             <p class="about__lead">
-              Sou Gabriel Duarte Rizzo do Nascimento, estudante de Ciência da Computação no Rio de Janeiro. Me
-              interessa o ponto em que design e código se encontram: pensar a interface e acompanhar como ela é
-              construída.
+              Sou o Gabriel Rizzo, moro no Rio de Janeiro e estou terminando a graduação em Ciência da Computação
+              na UVA. O que mais me interessa é o caminho entre a ideia de uma tela e a versão que funciona de
+              verdade no navegador.
             </p>
             <p>
-              Desenho telas, organizo cores, tipografia e componentes e desenvolvo o front-end com HTML, CSS e
-              JavaScript e, nos projetos mais recentes, com React e TypeScript. Também uso ferramentas de imagem e
-              vídeo, como Photoshop e Premiere Pro.
+              Na prática, desenho telas no Figma, escolho cores, tipografia e componentes e depois construo a
+              interface com HTML, CSS e JavaScript (nos projetos mais recentes, com React e TypeScript). Também
+              trabalho com imagem e vídeo no Photoshop e no Premiere Pro.
             </p>
             <p>
-              Tenho arquivos no Figma de alguns desses projetos, parte deles reproduzindo interfaces que programei.
-              Estou organizando esse material para publicar nos estudos de caso.
+              Alguns estudos de caso já mostram o arquivo do Figma ao lado do site publicado. Os outros vão ganhar o
+              mesmo registro conforme eu organizo o material.
             </p>
           </div>
         </div>
@@ -326,7 +328,6 @@
           <h3 class="eyebrow pillars__title reveal">Como eu trabalho</h3>
           <ol class="pillars__list">
             <li class="pillar reveal">
-              <p class="pillar__num">01</p>
               <h4 class="pillar__name">UI/UX Design</h4>
               <p class="pillar__text">
                 Desenho telas pensando em hierarquia, tipografia, cor e nos estados da interface: carregamento, erro e
@@ -338,7 +339,6 @@
               </p>
             </li>
             <li class="pillar reveal">
-              <p class="pillar__num">02</p>
               <h4 class="pillar__name">Front-End</h4>
               <p class="pillar__text">
                 Construo interfaces responsivas e acessíveis com HTML, CSS e JavaScript e, nos projetos recentes, com
@@ -350,7 +350,6 @@
               </p>
             </li>
             <li class="pillar pillar--result reveal">
-              <p class="pillar__num">01 + 02</p>
               <h4 class="pillar__name">Design Engineering</h4>
               <p class="pillar__text">
                 A ponte entre os dois: decisões de design guardadas em tokens, componentes reutilizáveis e cuidado para
@@ -366,22 +365,21 @@
       </section>
 
       <!-- ============================================================
-           03 · TRAJETÓRIA
+           TRAJETÓRIA
            ============================================================ -->
       <section class="journey on-paper" id="trajetoria" aria-labelledby="trajetoria-title">
         <div class="container">
-          <p class="eyebrow reveal">03 — Trajetória</p>
           <h2 class="section-title reveal" id="trajetoria-title">Trajetória</h2>
 
           <ol class="timeline">
             <li class="timeline__item reveal">
-              <p class="timeline__date"><time datetime="2025-09">Set. 2025</time> — atual</p>
+              <p class="timeline__date"><time datetime="2025-09">Set. 2025</time> — <time datetime="2026-10">Out. 2026</time></p>
               <div class="timeline__content">
                 <h3>Designer de Interface e Desenvolvedor <span class="nowrap">Front-End</span></h3>
                 <p class="timeline__org">Incentivart · Freelance</p>
                 <p>
-                  Design das telas do site e desenvolvimento de parte do front-end, em dupla: meu parceiro cuidou do
-                  back-end e da maior parte do código. O blog do site está em desenvolvimento.
+                  UI/UX do site e parte do front-end, em dupla com Bruno Scalercio, que ficou principalmente com o
+                  back-end e com a maior parte do código. Projeto entregue.
                 </p>
               </div>
               <a class="timeline__link" href="projetos/incentivart.html">Estudo de caso <span class="arrow arrow--right" aria-hidden="true">→</span></a>
@@ -391,7 +389,7 @@
               <div class="timeline__content">
                 <h3>Horror Game Lux · TCC</h3>
                 <p class="timeline__org">Ciência da Computação · UVA · Projeto em grupo</p>
-                <p>Jogo de terror em desenvolvimento na Unreal Engine, ainda não concluído.</p>
+                <p>Jogo de terror em desenvolvimento na Unreal Engine. Cuido da ambientação, da história, do game design e de parte da jogabilidade.</p>
               </div>
               <a class="timeline__link" href="projetos/horror-game-lux.html">Estudo de caso <span class="arrow arrow--right" aria-hidden="true">→</span></a>
             </li>
@@ -408,7 +406,7 @@
       </section>
 
       <!-- ============================================================
-           04 · FERRAMENTAS
+           FERRAMENTAS
            Sem níveis, barras ou porcentagens: só o nome e, quando houver,
            o projeto em que a ferramenta aparece.
            ============================================================ -->
@@ -416,7 +414,7 @@
         <div class="container">
           <header class="skills__header reveal">
             <div class="skills__heading">
-              <p class="eyebrow">04 — Competências</p>
+              <p class="eyebrow">Competências</p>
               <h2 class="section-title" id="ferramentas-title">Ferramentas</h2>
             </div>
             <p class="skills__intro">
@@ -484,11 +482,9 @@
               </ul>
             </section>
 
-            <section class="skill-group reveal" aria-labelledby="sg-other">
-              <h3 class="skill-group__title" id="sg-other">Outras tecnologias</h3>
+            <section class="skill-group reveal" aria-labelledby="sg-games">
+              <h3 class="skill-group__title" id="sg-games">Jogos</h3>
               <ul class="skill-grid">
-                <li class="skill"><span class="skill__icon" aria-hidden="true">My</span><span class="skill__text"><span class="skill__name">MySQL</span><span class="skill__context">ScazzoStore</span></span></li>
-                <li class="skill"><span class="skill__icon" aria-hidden="true">p5</span><span class="skill__text"><span class="skill__name">p5.js</span></span></li>
                 <li class="skill"><span class="skill__icon" aria-hidden="true">Ue</span><span class="skill__text"><span class="skill__name">Unreal Engine</span><span class="skill__context">TCC Lux</span></span></li>
               </ul>
             </section>
@@ -497,12 +493,16 @@
       </section>
 
       <!-- ============================================================
-           05 · CONTATO
+           CONTATO
            ============================================================ -->
       <section class="contact" id="contato" aria-labelledby="contato-title">
         <div class="container contact__grid">
+          <figure class="frame contact__photo reveal">
+            <img src="assets/images/gabriel-rizzo.jpg" alt="Retrato de Gabriel Rizzo, sorrindo, em um evento." width="640" height="800" loading="lazy" decoding="async" />
+            <span class="frame__label" aria-hidden="true">Gabriel Rizzo · RJ</span>
+          </figure>
           <div class="contact__heading reveal">
-            <p class="eyebrow">05 — Contato</p>
+            <p class="eyebrow">Contato</p>
             <h2 class="contact__title" id="contato-title">Vamos <br /><span class="outline">conversar?</span></h2>
           </div>
           <div class="contact__body reveal">

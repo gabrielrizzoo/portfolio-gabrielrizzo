@@ -123,12 +123,13 @@
   border-bottom: 1px solid var(--line);
 }
 
-.hero__roles span {
-  color: var(--lime);
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
+.hero__roles li::before {
+  flex: none;
+  align-self: center;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--lime);
+  content: "";
 }
 
 .hero__aside {
@@ -271,10 +272,10 @@
 
 /* --------------------------------------------------------------------------
    Estudos de caso
-   Baseado em portfolio-projects-section.html: card com imagem em cima,
-   conteúdo dentro de uma moldura de linhas finas e grade assimétrica.
-   Aqui a grade fica defasada em duas colunas e o card inteiro leva ao
-   estudo de caso (um único link por card, no título).
+   Baseado em portfolio-projects-section.html: miniatura com moldura fina,
+   meta numerada e seta circular. Miniatura e descrição ficam lado a lado e
+   trocam de lado a cada card (zig-zag). O card inteiro leva ao estudo de
+   caso, com um único link por card, no título.
    -------------------------------------------------------------------------- */
 
 .portfolio-work {
@@ -306,59 +307,69 @@
 }
 
 .portfolio-work__grid {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  align-items: start;
-  gap: clamp(3.5rem, 7vw, 5.5rem) 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4.5rem, 9vw, 7.5rem);
   max-width: var(--max);
   margin: clamp(3.5rem, 8vw, 6rem) auto 0;
 }
 
-.portfolio-project:nth-child(4n + 1) {
-  grid-column: 1 / span 7;
-}
-
-.portfolio-project:nth-child(4n + 2) {
-  grid-column: 9 / span 4;
-  margin-top: clamp(4rem, 13vw, 12rem);
-}
-
-.portfolio-project:nth-child(4n + 3) {
-  grid-column: 2 / span 5;
-}
-
-.portfolio-project:nth-child(4n + 4) {
-  grid-column: 8 / span 5;
-  margin-top: clamp(3rem, 9vw, 8rem);
-}
-
 .portfolio-project {
   position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: center;
+  gap: 1.5rem clamp(1.5rem, 3vw, 3rem);
   min-width: 0;
-  padding-bottom: 1.6rem;
-  border: 1px solid var(--line);
-  border-top: 0;
-  transition: border-color 200ms ease;
-}
-
-.portfolio-project:hover {
-  border-color: var(--line-strong);
 }
 
 .portfolio-project:focus-within {
   outline: 2px solid var(--lime);
-  outline-offset: 6px;
+  outline-offset: 10px;
 }
 
 .portfolio-project__visual {
   position: relative;
-  margin: 0 -1px;
-  overflow: hidden;
-  background: rgba(15, 5, 55, 0.25);
-  aspect-ratio: 1.45 / 1;
+  grid-row: 1;
+  grid-column: 1 / span 7;
 }
 
-.portfolio-project__visual img {
+.portfolio-project__content {
+  grid-row: 1;
+  grid-column: 8 / span 5;
+}
+
+.portfolio-project:nth-child(even) .portfolio-project__visual {
+  grid-column: 6 / span 7;
+}
+
+.portfolio-project:nth-child(even) .portfolio-project__content {
+  grid-column: 1 / span 5;
+}
+
+/* Pequeno deslocamento para manter a composição assimétrica */
+.portfolio-project:nth-child(4n + 3) .portfolio-project__visual {
+  grid-column: 2 / span 7;
+}
+
+.portfolio-project:nth-child(4n + 3) .portfolio-project__content {
+  grid-column: 9 / span 4;
+}
+
+.portfolio-project__media {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: rgba(15, 5, 55, 0.25);
+  aspect-ratio: 1.45 / 1;
+  transition: border-color 200ms ease;
+}
+
+.portfolio-project:hover .portfolio-project__media {
+  border-color: var(--line-strong);
+}
+
+.portfolio-project__media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -366,7 +377,7 @@
   transition: transform 450ms var(--ease);
 }
 
-.portfolio-project:hover .portfolio-project__visual img {
+.portfolio-project:hover .portfolio-project__media img {
   transform: scale(1.035);
 }
 
@@ -418,7 +429,9 @@
 }
 
 .portfolio-project__content {
-  padding: 1.35rem clamp(1rem, 2vw, 1.75rem) 0;
+  min-width: 0;
+  padding-top: 1.35rem;
+  border-top: 1px solid var(--line);
 }
 
 .portfolio-project__meta {
@@ -602,13 +615,14 @@
 
 @media (max-width: 800px) {
   .portfolio-work__grid {
-    display: flex;
-    flex-direction: column;
     gap: 3.5rem;
   }
 
-  .portfolio-project:nth-child(n) {
-    margin-top: 0;
+  .portfolio-project {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
   }
 
   .portfolio-project__sticker {
@@ -651,11 +665,6 @@
   grid-column: 1 / span 5;
 }
 
-.about__head .eyebrow {
-  margin-bottom: 1.5rem;
-  color: var(--violet);
-}
-
 .about__body {
   grid-column: 6 / -1;
   max-width: 44rem;
@@ -677,23 +686,6 @@
 
 .about__body > p + p {
   margin-top: 1rem;
-}
-
-/* Foto (ainda não fornecida): estilo pronto para quando houver uma.
-   Tratamento duotone violeta para integrar à identidade. */
-.about__photo {
-  position: relative;
-  max-width: 18rem;
-  margin-top: 2.5rem;
-  background: var(--violet);
-}
-
-.about__photo img {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  filter: grayscale(1) contrast(1.05);
-  mix-blend-mode: screen;
 }
 
 /* UI/UX Design + Front-End = Design Engineering */
@@ -748,13 +740,6 @@
   color: var(--white);
   border-color: var(--violet);
   background: var(--violet);
-}
-
-.pillar__num {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
 }
 
 .pillar__name {
@@ -1055,14 +1040,31 @@
   gap: 2.5rem 1.5rem;
 }
 
+/* Foto em cores naturais, com a moldura de seleção da identidade */
+.contact__photo {
+  --frame-inset: -10px;
+
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 4;
+  align-self: end;
+}
+
+.contact__photo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
 .contact__heading {
-  grid-column: 1 / span 7;
+  grid-row: 1;
+  grid-column: 6 / -1;
 }
 
 .contact__title {
   margin-top: 1.5rem;
   font-family: var(--font-display);
-  font-size: clamp(3.5rem, 11vw, 9.5rem);
+  font-size: clamp(3.25rem, 8vw, 7.5rem);
   font-weight: 800;
   letter-spacing: -0.045em;
   line-height: 0.88;
@@ -1073,7 +1075,9 @@
 }
 
 .contact__body {
-  grid-column: 8 / -1;
+  grid-row: 2;
+  grid-column: 6 / -1;
+  align-self: start;
 }
 
 .contact__text {
@@ -1090,16 +1094,15 @@
 }
 
 @media (max-width: 900px) {
+  .contact__photo,
   .contact__heading,
   .contact__body {
+    grid-row: auto;
     grid-column: 1 / -1;
   }
-}
 
-.journey .eyebrow {
-  color: var(--violet);
-}
-
-.journey .section-title {
-  margin-top: 1.5rem;
+  .contact__photo {
+    width: min(100%, 15rem);
+    margin-bottom: 1rem;
+  }
 }
